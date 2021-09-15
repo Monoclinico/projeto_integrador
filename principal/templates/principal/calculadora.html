@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <link rel="icon" type="image/x-icon" href="{% static 'principal/img/logo-lampada.ico' %}"/>
+  <title>Consumo Consciente</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='{% static 'principal/css/style.css' %}'/>
+  <link rel='stylesheet' type='text/css' media='screen' href='{% static 'principal/css/menu.css' %}'/>
+  <link rel='stylesheet' type='text/css' media='screen' href='{% static 'principal/css/calculadora.css' %}'>
+</head>
+
+<body>
+  {% include "./menu.html" %}
+  <div class="bloco-content-principal">
+    <div class="bloco-img-principal">
+      <div class="bloco-titulo-main">
+        <div class="bloco-titulo-main-2">
+          <h1 >CALCULADORA ENERGÉTICA</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-itens-main">
+      <section class="bloco-itens-header">
+        <div class="itens-header-coluna">
+          <p>Tipo de aparelho</p>
+        </div>
+        <div class="itens-header-coluna">
+          <p>Potência (Watts)</p>
+        </div>
+        <div class="itens-header-coluna">
+          <p>Quantidade</p>
+        </div>
+        <div class="itens-header-coluna">
+          <p>Tempo (horas)</p>
+        </div>
+      </section>
+      <section class="bloco-itens-list">
+        <div class="itens-inputs">
+            <select class="itens-atributes" name="aparelho">
+              <option value="" disabled="" hidden="">Selecione o aparelho</option>
+              <option value="Geladeira">Geladeira</option>
+              <option value="Máquina de lavar louça">Máquina de lavar louça</option>
+              <option value="Cooktop de indução">Cooktop de indução</option>
+              <option value="Forno elétrico">Forno elétrico</option>
+              <option value="Micro-ondas">Micro-ondas</option>
+              <option value="Coifas">Coifas</option>
+        <option value="Televisão">Televisão</option>
+              <option value="Frigobar">Frigobar</option>
+              <option value="Máquina semi-automática">Máquina semi-automática</option>
+              <option value="Máquina automática">Máquina automática</option>
+              <option value="Máquina lava &amp; seca">Máquina lava &amp; seca</option>
+              <option value="Chuveiro elétrico">Chuveiro elétrico</option>
+              <option value="Torneira elétrica">Torneira elétrica</option>
+              <option value="Ar-condicionado split">Ar-condicionado split</option>
+              <option value="Ar-condicionado janela">Ar-condicionado janela</option>
+              <option value="Ar-condicionado cassete">Ar-condicionado cassete</option>
+            </select>
+            <input class="itens-atributes" name="potencia" type="number" min="0" placeholder="Potência (W)" class="input"  value="">
+            <input class="itens-atributes" name="quantidade" type="number" min="0" placeholder="Unidade" class="input" value="">
+            <input class="itens-atributes" name="tempo" type="number" min="1" placeholder="Tempo (h/dia)" class="input" max="24" value="">
+            <div class="action-delete"><p class="action-text">X</p></div>
+        </div>
+      </section>
+      <section class="bloco-itens-actions">
+        <div class="action-add"><p class="action-text">Adicionar Item</p></div>
+        <div class="action-calcular"><p class="action-text">Calcular</p></div>
+      </section>
+
+    </div>
+  </div>
+
+  {% include "./footer.html" %}
+  <script type="application/javascript" src="{% static 'principal/js/calculadora.js' %}">s
+  </script>
+</body>
+
+</html>
+
+
+
+

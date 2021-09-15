@@ -1,0 +1,26 @@
+{% load static %}
+<div class="menu-principal">
+    <div class="top-menu-container">
+        <a href="{% url 'principal:index' %}" class="menu-logo"><img src="{% static 'principal/img/logo.png' %}" alt="logo consumo consciente"></a>
+        <div class="menu-itens">
+            <div class="dropdown">
+                <div class="dropdown-first"><a href="{% url 'principal:index' %}">Início</a></div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-first"><a href="#">Exemplo</a></div>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-first"><a href="{% url 'principal:calculadora' %}">Simular Consumo</a></div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-first"><a href="#">Sobre</a></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
