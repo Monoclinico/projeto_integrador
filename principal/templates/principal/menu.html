@@ -1,26 +1,32 @@
 {% load static %}
-<div class="menu-principal">
-    <div class="top-menu-container">
+<header>
+    <div class="float-l">
         <a href="{% url 'principal:index' %}" class="menu-logo"><img src="{% static 'principal/img/logo.png' %}" alt="logo consumo consciente"></a>
-        <div class="menu-itens">
-            <div class="dropdown">
-                <div class="dropdown-first"><a href="{% url 'principal:index' %}">Início</a></div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-first"><a href="#">Exemplo</a></div>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-first"><a href="{% url 'principal:calculadora' %}">Simular Consumo</a></div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-first"><a href="#">Sobre</a></div>
-            </div>
-            
-        </div>
     </div>
-</div>
+    
+    <input type="checkbox" id="control-nav" />
+    <label for="control-nav" class="control-nav"></label>
+    <label for="control-nav" class="control-nav-close"></label>
+
+    <nav class="">
+      <ul class="list-auto">
+        <li class="float-l" >
+          <a href="{% url 'principal:index' %}" title="Início">Início</a>
+        </li >
+        <li class="float-l dropdown">
+          <a href="#" title="Lista">Exemplo</a>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li >
+        <li class="float-l">
+            <a href="{% url 'principal:calculadora' %}" title="Calculadora">Simular Consumo</a>
+        </li >
+        <li class="float-l">
+          <a href="#" title="Sobre">Sobre</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
