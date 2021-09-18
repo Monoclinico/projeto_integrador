@@ -1,9 +1,36 @@
 {% extends "./base.html" %}
 {% load static %}
 
+{% block linksadicionais %}
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/conteudo.css' %}"/>
+{% endblock linksadicionais %}
+
 {% block conteudo %}
 <div class="bloco-img-principal">
+    <div class="bloco-img-mascara">
+        <div class="bloco-img-texto">
+            <p class="texto-A">Calculadora de Energia Elétrica</p>
+            <p class="texto-C">Entenda melhor o seu consumo de energia e crie novos hábitos</p>
+            <a id="button-conferir" href="{% url 'principal:calculadora' %}" title="calculadora">Simular Meu Consumo</a>
+        </div>
+    </div>
+    <img src="{% static 'principal/img/conta-de-luz.jpg' %}"/>
 </div>
-<h1>FUNCIONA</h1>
-<p>dsfsdfsdf</p>
+<div class="bloco-conteudo-principal">
+    <h2 class="titulo-bloco-conteudo">Projeto Simulador de consumo</h2>
+    <p class="texto-D">O Simulador de Consumo foi desenvolvido para você conhecer melhor a energia elétrica consumida por cada aparelho da sua casa. Você seleciona cômodos e equipamentos, informa a potência e, o tempo de uso dos aparelhos e o Simulador estima o consumo total. Ao final, ainda recebe dicas dos equipamentos mais eficientes do mercado, de acordo com o seu perfil de uso. A leitura na sua conta de luz é feita em quilowatt hora (kWh).</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+</div> 
+<div class="bloco-conteudo-principal">
+    <h2 class="titulo-bloco-conteudo">A Conta de Energia</h2>
+    <p class="texto-D">É muito importante analisar e acompanhar o avanço da conta de luz. Ela traz informações essenciais, como o número do cliente, o consumo mensal de energia, valores de tarifa impostos e taxas, e por fim, os telefones de contato com a concessionária de energia ou agência reguladora. A cobrança da conta é feita mensalmente, combase em uma tarifa unitária de energia. O total da fatura em Real (R$) é resultado da multiplicação da energia consumida (medida em quilowatt hora) no mês pela tarifa aplicada, acrescido de taxas e impostos. Os valores são definidos e homologados pela Agência Nacional de Energia Elétrica (Aneel).</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+    <p class="texto-D">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ut praesentium totam consequuntur, fugiat vero assumenda debitis perspiciatis, quaerat animi minima? Voluptatem, blanditiis id. Doloribus temporibus alias rem repellendus provident.</p>
+</div> 
+
 {% endblock conteudo %}

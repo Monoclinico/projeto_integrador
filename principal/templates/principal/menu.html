@@ -1,14 +1,16 @@
 {% load static %}
 <header>
-    <div class="float-l">
-        <a href="{% url 'principal:index' %}" class="menu-logo"><img src="{% static 'principal/img/logo.png' %}" alt="logo consumo consciente"></a>
+  <div class="header-container">
+    <div class="float-l menu-logo">
+        <a href="{% url 'principal:index' %}"><img src="{% static 'principal/img/logo.png' %}" alt="logo consumo consciente"></a>
     </div>
     
     <input type="checkbox" id="control-nav" />
     <label for="control-nav" class="control-nav"></label>
     <label for="control-nav" class="control-nav-close"></label>
 
-    <nav class="">
+    <nav class="float-l menu-itens">
+      <label for="control-nav" class="control-nav-close-x">X</label>
       <ul class="list-auto">
         <li class="float-l" >
           <a href="{% url 'principal:index' %}" title="Início">Início</a>
@@ -29,4 +31,5 @@
         </li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>

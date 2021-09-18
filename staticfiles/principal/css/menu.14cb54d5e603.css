@@ -1,5 +1,33 @@
-.menu-logo {
+.float-l {
     float: left;
+}
+
+.float-r {
+    float: right;
+}
+
+header {
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #1b2d51;
+    z-index: 200000;
+    height: 80px;
+    border-bottom: 1px solid #fdce58;
+}
+
+.header-container {
+    position: relative;
+    left: 50%;
+    height: auto;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    display: block;
+    max-width: 800px;
+    padding: 10px;
 }
 
 .menu-logo img {
@@ -31,34 +59,6 @@
     display: block;
 }
 
-.float-l {
-    float: left;
-}
-
-.float-r {
-    float: right;
-}
-
-header {
-    min-height: 60px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    border-bottom: 1px solid #ccc;
-    background: #1b2d51;
-    z-index: 200000;
-    height: 88px;
-    border-bottom: 1px solid #fdce58;
-}
-
-header nav {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 00%);
-    display: block;
-    width: 50%;
-}
 
 header ul {
     list-style: none;
@@ -79,6 +79,7 @@ header li a {
     font-size: 16px;
     text-decoration: none;
 	text-transform: uppercase;
+    font-weight: 700;
 }
 
 header li a:hover {
@@ -98,19 +99,26 @@ input#control-nav {
     transform: translate(0, 0);
 }
 
-#control-nav:checked~nav {
+#control-nav:checked~.menu-itens {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
 }
 
-#control-nav:disabled~nav {
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.control-nav-close-x {
+    display: none;
+    position: relative;
+    margin: 10px 15px 0px 15px;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    color: #fdce58;
+    font-size: 1.2em;
+    font-weight: 800;
 }
 
 @media screen and (max-width: 767px) {
+
     .float-l {
         float: none;
     }
@@ -139,20 +147,22 @@ input#control-nav {
     }
     header .control-nav-close {
         position: fixed;
+        height: 500px;
         right: 0;
         top: 0;
         bottom: 0;
         left: 0;
         display: block;
         z-index: 1;
-        background: rgba(0, 0, 0, 0.4);
         -webkit-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
         transition: all 500ms ease;
         -webkit-transform: translate(100%, 0);
         -ms-transform: translate(100%, 0);
         transform: translate(100%, 0);
     }
-    header nav {
+    .menu-itens {
+        height: 500px;
         left: auto;
         display: block;
         width: auto;
@@ -161,14 +171,23 @@ input#control-nav {
         right: 0;
         bottom: 0;
         width: 250px;
-        border-left: 1px solid #ccc;
+        border-left: 1px solid #fdce58;
         background: #1b2d51;
-        overflow-x: auto;
-        z-index: 200;
+        overflow-x: hidden;
+        z-index: 20000;
+        box-shadow: 10px 10px 10px black;
         -webkit-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
         transition: all 500ms ease;
         -webkit-transform: translate(100%, 0);
         -ms-transform: translate(100%, 0);
         transform: translate(100%, 0);
+    }
+    .menu-itens ul {
+        padding-top: 10px;
+    }
+    .control-nav-close-x {
+        display: block;
+
     }
 }
