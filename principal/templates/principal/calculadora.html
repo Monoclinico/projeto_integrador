@@ -3,10 +3,40 @@
 
 {% block linksadicionais %}
   <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/calculadora.css' %}"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Item', 'Uso'],
+        ['Geladeira',     20],
+        ['Chuverio',      20],
+        ['Computador',  20],
+        ['Watch TV', 25],
+        ['Microondas',    15],
+      ]);
+
+      var options = {
+        title: 'Porcentual de Consumo',
+        is3D: true,
+        with: 300,
+        height: 500,
+        backgroundColor: 'blue',
+        chartArea:{left:0,top:100,width:'50%',height:'50%'},
+        legend: {position: 'bottom', textStyle: {color: 'white', fontSize: 16}}
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      
+      chart.draw(data, options);
+    }
+  </script>
 {% endblock linksadicionais %}
   
 {% block conteudo %}
-<div class="bloco-content-principal">
   <div class="bloco-img-principal">
     <div class="bloco-titulo-main">
       <div class="bloco-titulo-main-2">
@@ -16,44 +46,42 @@
   </div>
 
   <div class="bloco-itens-main">
-    <section class="bloco-itens-header">
-      <div class="itens-header-coluna">
-        <p>Tipo de aparelho</p>
-      </div>
-      <div class="itens-header-coluna">
-        <p>Potência (Watts)</p>
-      </div>
-      <div class="itens-header-coluna">
-        <p>Quantidade</p>
-      </div>
-      <div class="itens-header-coluna">
-        <p>Tempo (horas)</p>
-      </div>
-    </section>
     <section class="bloco-itens-list">
       <div class="itens-inputs">
-          <select class="itens-atributes" name="aparelho">
-            <option value="" disabled="" hidden="">Selecione o aparelho</option>
-            <option value="Geladeira">Geladeira</option>
-            <option value="Máquina de lavar louça">Máquina de lavar louça</option>
-            <option value="Cooktop de indução">Cooktop de indução</option>
-            <option value="Forno elétrico">Forno elétrico</option>
-            <option value="Micro-ondas">Micro-ondas</option>
-            <option value="Coifas">Coifas</option>
-      <option value="Televisão">Televisão</option>
-            <option value="Frigobar">Frigobar</option>
-            <option value="Máquina semi-automática">Máquina semi-automática</option>
-            <option value="Máquina automática">Máquina automática</option>
-            <option value="Máquina lava &amp; seca">Máquina lava &amp; seca</option>
-            <option value="Chuveiro elétrico">Chuveiro elétrico</option>
-            <option value="Torneira elétrica">Torneira elétrica</option>
-            <option value="Ar-condicionado split">Ar-condicionado split</option>
-            <option value="Ar-condicionado janela">Ar-condicionado janela</option>
-            <option value="Ar-condicionado cassete">Ar-condicionado cassete</option>
-          </select>
-          <input class="itens-atributes" name="potencia" type="number" min="0" placeholder="Potência (W)" class="input"  value="">
-          <input class="itens-atributes" name="quantidade" type="number" min="0" placeholder="Unidade" class="input" value="">
-          <input class="itens-atributes" name="tempo" type="number" min="1" placeholder="Tempo (h/dia)" class="input" max="24" value="">
+          <div idd="input-aparelho" class="item-input">
+            <p>Tipo de Aparelho</p>
+            <select class="itens-atributes" name="aparelho">
+              <option value=""></option>
+              <option value="Geladeira">Geladeira</option>
+              <option value="Máquina de lavar louça">Máquina de lavar louça</option>
+              <option value="Cooktop de indução">Cooktop de indução</option>
+              <option value="Forno elétrico">Forno elétrico</option>
+              <option value="Micro-ondas">Micro-ondas</option>
+              <option value="Coifas">Coifas</option>
+              <option value="Televisão">Televisão</option>
+              <option value="Frigobar">Frigobar</option>
+              <option value="Máquina semi-automática">Máquina semi-automática</option>
+              <option value="Máquina automática">Máquina automática</option>
+              <option value="Máquina lava &amp; seca">Máquina lava &amp; seca</option>
+              <option value="Chuveiro elétrico">Chuveiro elétrico</option>
+              <option value="Ar-condicionado split">Ar-condicionado split</option>
+              <option value="Ar-condicionado janela">Ar-condicionado janela</option>
+              <option value="Ar-condicionado cassete">Ar-condicionado cassete</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div id="input-potencia" class="item-input">
+            <p>Potência (W)</p>
+            <input  class="itens-atributes" name="potencia" type="number" min="0" placeholder="" class="input"  value="">
+          </div>
+          <div id="input-quantidade" class="item-input">
+            <p>Quantidade</p>
+            <input class="itens-atributes" name="quantidade" type="number" min="0" placeholder="" class="input" value="">
+          </div>
+          <div id="input-tempo" class="item-input">
+            <p>Tempo (horas/dia)</p>
+            <input class="itens-atributes" name="tempo" type="number" min="1" placeholder="" class="input" max="24" value="">
+          </div>
           <div class="action-delete"><p class="action-text">X</p></div>
       </div>
     </section>
@@ -63,12 +91,12 @@
     </section>
 
   </div>
-</div>
+<div id="piechart" style="width: auto;"></div>
 {% endblock conteudo %}
   
 
 {% block scriptpagina %}
-    <script type="application/javascript" src="{% static 'principal/js/calculadora.js' %}"></script>
+  <script type="application/javascript" src="{% static 'principal/js/calculadora.js' %}"></script>
 {% endblock scriptpagina %}
 
 
