@@ -51,7 +51,7 @@
   position: relative;
   background-color: rgba(27, 45, 81, 1);
   display: grid;
-  grid-template-columns: max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content max-content;
   grid-template-rows: auto auto auto;
   grid-gap: 1%;
   justify-content: space-evenly;
@@ -59,7 +59,7 @@
   border-radius: 10px;
   overflow-y: hidden;
   width: auto;
-  padding: 50px 10px 10px 10px;
+  padding: 10px;
 }
 
 .item-input  {
@@ -81,21 +81,20 @@
 }
 
 .action-delete {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  width: auto;
-	border-radius: 50%;
+  display: block;
+  visibility: hidden;
 	padding: 0px 8px 8px 8px;
   cursor: pointer;
   margin: 0px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 10px;
 }
 
 .action-delete p {
   color: rgb(255, 0, 0);
-  font-weight: 900;
-  font-size: 2em;
+  font-weight: 700;
+  font-size: 1.8em;
 }
 
 .bloco-itens-actions {
@@ -153,6 +152,32 @@
 #input-quantidade {
   max-width: auto;
 }
+/*--------*/
+#piechart {
+  display: block;
+  margin: 5px auto;
+  width: 99%;
+  padding: 2px;
+  overflow: scroll;
+  background-color: rgba(27, 45, 81, 0.0);
+  border: 2px solid rgba(27, 45, 81, 1);
+  border-radius: 5px;
+}
+#tablechart {
+  display: block;
+  margin: 5px auto;
+  width: 99%;
+  padding: 2px;
+  background-color: rgba(27, 45, 81, 0.0);
+  border: 2px solid rgba(27, 45, 81, 1);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .itens-inputs{
+    justify-content: normal;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .itens-inputs {
@@ -160,16 +185,14 @@
     grid-template-rows: auto auto auto;
     grid-gap: 1%;
     overflow-x: scroll;
+    justify-content: space-evenly;
   }
   .item-input p {
     font-size: 0.7em;
   }
 
-  .action-delete {
-    grid-column: 1 / 3;
-  }
   .action-delete p {
-    font-size: 1.8em;
+    font-size: 1.2em;
   }
 
   #input-potencia input{
