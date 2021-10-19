@@ -27,6 +27,41 @@
   width: 100%;
   margin: 0 auto;
 }
+
+.titulo-bloco-conteudo {
+  display: block;
+  font-size: 2.1em;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: 400;
+  padding: 5px;
+  border-bottom: 2px solid #1b2d51;
+}
+
+.bloco-conteudo-principal {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+  margin: 20px 10px;
+  background-color: #ffffff00;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid #1b2d51;
+  box-shadow: 2px 2px 1px #1b2d51;
+}
+
+.texto-D {
+font-size: 1.5em;
+color: black;
+margin: 0;
+line-height: 1.4;
+font-weight: 500;
+text-indent: 20px;
+text-align: center;
+}
+
 /*---------------------*/
 
 
@@ -51,7 +86,7 @@
   position: relative;
   background-color: rgba(27, 45, 81, 1);
   display: grid;
-  grid-template-columns: max-content max-content max-content max-content max-content;
+  grid-template-columns: max-content min-content min-content max-content min-content min-content;
   grid-template-rows: auto auto auto;
   grid-gap: 1%;
   justify-content: space-evenly;
@@ -78,6 +113,13 @@
 	border-radius: 10px;
 	padding: 5px;
   color: black;
+  margin-top: 2px;
+}
+
+.label-inputs {
+  color: white;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
 .action-delete {
@@ -89,12 +131,13 @@
   border-radius: 10px;
   background-color: white;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .action-delete p {
   color: rgb(255, 0, 0);
   font-weight: 700;
-  font-size: 1.8em;
+  font-size: 1.2em;
 }
 
 .bloco-itens-actions {
@@ -143,14 +186,48 @@
     padding: 15px 10px;
     margin: 10px;
 }
-#input-potencia {
-  max-width: auto;
+
+.bloco-tabela-potencias {
+  display: none;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+  margin: 20px 10px;
+  background-color: #ffffff00;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid #1b2d51;
+  box-shadow: 2px 2px 1px #1b2d51;
 }
-#input-tempo {
-  max-width: auto;
+
+table#tablepot {
+  border: 2px solid #000000;
+  border-spacing: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: beige;
 }
-#input-quantidade {
-  max-width: auto;
+  
+table#tablepot td {
+  border: 1px solid #000000;
+  padding: 8px;
+  font-size: 0.7em;
+}
+
+
+.input-potencia input{
+  max-width: 80px;
+}
+.input-quantidade input{
+  max-width: 50px;
+}
+.input-tempo input{
+  max-width: 50px;
+}
+.input-dias input {
+  max-width: 50px;
 }
 /*--------*/
 #piechart {
@@ -172,6 +249,27 @@
   border: 2px solid rgba(27, 45, 81, 1);
   border-radius: 5px;
 }
+.bloco-valores-totais {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #1b2d51;
+  padding: 10px;
+}
+.bloco-valores-totais {
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.valores-totais {
+  margin: 0 auto;
+  background-color: white;
+	border: 2px solid rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 5px;
+  color: black;
+}
 
 @media screen and (max-width: 1000px) {
   .itens-inputs{
@@ -181,7 +279,7 @@
 
 @media screen and (max-width: 767px) {
   .itens-inputs {
-    grid-template-columns: max-content max-content;
+    grid-template-columns: max-content min-content;
     grid-template-rows: auto auto auto;
     grid-gap: 1%;
     overflow-x: scroll;
@@ -194,15 +292,8 @@
   .action-delete p {
     font-size: 1.2em;
   }
-
-  #input-potencia input{
-    max-width: 80px;
-  }
-  #input-tempo input{
-    max-width: 100px;
-  }
-  #input-quantidade input{
-    max-width: 100px;
+  .texto-D {
+    font-size: 1em;
   }
 }
 

@@ -1,0 +1,33 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block linksadicionais %}
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/sobre.css' %}"/>
+{% endblock linksadicionais %}
+  
+{% block conteudo %}
+    <div class="bloco-img-principal">
+        <div class="bloco-titulo-main">
+        <div class="bloco-titulo-main-2">
+            <h1 >SOBRE O PROJETO</h1>
+        </div>
+        </div>
+    </div>
+    <div class="bloco-conteudo-principal">
+        <h2 class="titulo-bloco-conteudo">O projeto</h2>
+        <p class="texto-D">O Simulador de Consumo foi desenvolvido para você conhecer melhor a energia elétrica consumida por cada aparelho da sua casa. Você seleciona os equipamentos, informa a potência e, o tempo de uso dos aparelhos e o Simulador estima o consumo total. Ao final, ainda recebe dicas dos equipamentos mais eficientes do mercado, de acordo com o seu perfil de uso.</p>
+    </div> 
+    <div class="bloco-conteudo-principal">
+        <h2 class="titulo-bloco-conteudo">Criadores do projeto</h2>
+        <p class="texto-D">
+            Eduardo Príncipe Lima, RA 2011451,  Ciência de Dados<br/>
+            Léa Marisa dos Santos, RA 2005280,  Bacharelado de Tecnologia da Informação<br/>
+            Matheus Sanches Leme, RA 2010329,  Engenharia da Computação<br/>
+            Roberto Lopes dos Santos, RA 2003239,   Bacharelado de Tecnologia da Informação</p>
+    </div> 
+    
+{% endblock conteudo %}
+
+
+
+

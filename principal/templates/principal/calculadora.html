@@ -14,60 +14,220 @@
       </div>
     </div>
   </div>
-
+  <div class="bloco-conteudo-principal">
+    <h2 class="titulo-bloco-conteudo">Como usar</h2>
+    <p class="texto-D">
+      Descubra quanta energia é gasta em sua residência usando a calculadora abaixo.<br/>
+      Basta escolher o aparelho, aparecerá a potência média (pode ser alterada caso saiba a correta),colocar a quantidade itens, inserir as horas ou minutos de uso e os dias de consumo em um mês.
+    </p>
+  </div> 
   <div class="bloco-itens-main">
     <section class="bloco-itens-list">
       <div class="itens-inputs">
-          <div id="input-aparelho" class="item-input">
-            <p>Tipo de Aparelho</p>
-            <select class="itens-atributes" name="aparelho">
+          <div class="input-aparelho item-input">
+            <p class="label-inputs">Tipo de Aparelho</p>
+            <select class="itens-atributes seletor-aparelhos" name="aparelho">
               <option value=""></option>
-              <option value="Geladeira">Geladeira</option>
-              <option value="Máquina de lavar louça">Máquina de lavar louça</option>
-              <option value="Cooktop de indução">Cooktop de indução</option>
-              <option value="Forno elétrico">Forno elétrico</option>
-              <option value="Micro-ondas">Micro-ondas</option>
-              <option value="Coifas">Coifas</option>
-              <option value="Televisão">Televisão</option>
-              <option value="Frigobar">Frigobar</option>
-              <option value="Máquina semi-automática">Máquina semi-automática</option>
-              <option value="Máquina automática">Máquina automática</option>
-              <option value="Máquina lava &amp; seca">Máquina lava &amp; seca</option>
-              <option value="Chuveiro elétrico">Chuveiro elétrico</option>
-              <option value="Ar-condicionado split">Ar-condicionado split</option>
-              <option value="Ar-condicionado janela">Ar-condicionado janela</option>
-              <option value="Ar-condicionado cassete">Ar-condicionado cassete</option>
+
+              <option value="aparelho de blu ray">aparelho de blu ray</option>
+              <option value="aparelho de dvd">aparelho de dvd</option>
+              <option value="aparelho de som">aparelho de som</option>
+              <option value="aquecedor de ambiente">aquecedor de ambiente</option>
+              <option value="aquecedor de mamadeira">aquecedor de mamadeira</option>
+              <option value="aquecedor de marmita">aquecedor de marmita</option>
+              <option value="ar-condicionado tipo janela menor ou igual a 9.000 btu/h">ar-condicionado tipo janela menor ou igual a 9.000 btu/h</option>
+              <option value="ar-condicionado tipo janela de 9.001 a 14.000 btu/h">ar-condicionado tipo janela de 9.001 a 14.000 btu/h</option>
+              <option value="ar-condicionado tipo janela maior que 14.000 btu/h">ar-condicionado tipo janela maior que 14.000 btu/h</option>
+              <option value="ar-condicionado tipo split menor ou igual a 10.000 btu/h">ar-condicionado tipo split menor ou igual a 10.000 btu/h</option>
+              <option value="ar-condicionado tipo split de 10.001 a 15.000 btu/h">ar-condicionado tipo split de 10.001 a 15.000 btu/h</option>
+              <option value="ar-condicionado tipo split de 15.001 a 20.000 btu/h">ar-condicionado tipo split de 15.001 a 20.000 btu/h</option>
+              <option value="ar-condicionado tipo split de 20.001 a 30.000 btu/h">ar-condicionado tipo split de 20.001 a 30.000 btu/h</option>
+              <option value="ar-condicionado tipo split maior que 30.000 btu/h">ar-condicionado tipo split maior que 30.000 btu/h</option>
+              <option value="aspirador de pó">aspirador de pó</option>
+              <option value="batedeira">batedeira</option>
+              <option value="boiler elétrico de 200l">boiler elétrico de 200L</option>
+              <option value="bomba d'água 1/2 cv">bomba d'água 1/2 cv</option>
+              <option value="bomba d'água 1/3 cv">bomba d'água 1/3 cv</option>
+              <option value="cafeteira elétrica">cafeteira elétrica</option>
+              <option value="cafeteira expresso">cafeteira expresso</option>
+              <option value="chaleira elétrica">chaleira elétrica</option>
+              <option value="churrasqueira elétrica">churrasqueira elétrica</option>
+              <option value="chuveiro elétrico 5500w">chuveiro elétrico 5500W</option>
+              <option value="chuveiro elétrico 4500w">chuveiro elétrico 4500W</option>
+              <option value="computador">computador</option>
+              <option value="enceradeira">enceradeira</option>
+              <option value="espremedor de frutas">espremedor de frutas</option>
+              <option value="exaustor fogão">exaustor fogão</option>
+              <option value="fax modem em stand by">fax modem em stand by</option>
+              <option value="ferro elétrico automático a seco 1050w">ferro elétrico automático a seco 1050W</option>
+              <option value="ferro elétrico automático a vapor 1200w">ferro elétrico automático a vapor 1200W</option>
+              <option value="fogão elétrico - cook top (por queimador)">fogão elétrico - cook top (por queimador)</option>
+              <option value="forno elétrico">forno elétrico</option>
+              <option value="forno micro-ondas 25l">forno micro-ondas 25L</option>
+              <option value="freezer vertical/horizontal">freezer vertical/horizontal</option>
+              <option value="freezer vertical frost free">freezer vertical frost free</option>
+              <option value="frigobar">frigobar</option>
+              <option value="fritadeira elétrica">fritadeira elétrica</option>
+              <option value="furadeira">furadeira</option>
+              <option value="geladeira 1 porta">geladeira 1 porta</option>
+              <option value="geladeira 1 porta frost free">geladeira 1 porta frost free</option>
+              <option value="geladeira 2 portas">geladeira 2 portas</option>
+              <option value="geladeira 2 portas frost free">geladeira 2 portas frost free</option>
+              <option value="grill">grill</option>
+              <option value="home theater 350w">home theater 350W</option>
+              <option value="impressora">impressora</option>
+              <option value="lâmpada fluorescente compacta - 11w">lâmpada fluorescente compacta - 11W</option>
+              <option value="lâmpada fluorescente compacta - 15w">lâmpada fluorescente compacta - 15W</option>
+              <option value="lâmpada fluorescente compacta - 23w">lâmpada fluorescente compacta - 23W</option>
+              <option value="lâmpada incandescente - 40w">lâmpada incandescente - 40W</option>
+              <option value="lâmpada incandescente - 60w">lâmpada incandescente - 60W</option>
+              <option value="lâmpada incandescente - 100w">lâmpada incandescente - 100W</option>
+              <option value="lavadora de louças">lavadora de louças</option>
+              <option value="lavadora de roupas">lavadora de roupas</option>
+              <option value="liquidificador">liquidificador</option>
+              <option value="máquina de costura">máquina de costura</option>
+              <option value="modem de internet">modem de internet</option>
+              <option value="monitor">monitor</option>
+              <option value="monitor lcd">monitor lcd</option>
+              <option value="multiprocessador">multiprocessador</option>
+              <option value="nebulizador">nebulizador</option>
+              <option value="notebook">notebook</option>
+              <option value="panela elétrica">panela elétrica</option>
+              <option value="parafusadeira">parafusadeira</option>
+              <option value="prancha/chapinha">prancha/chapinha</option>
+              <option value="projetor">projetor</option>
+              <option value="rádio elétrico pequeno">rádio elétrico pequeno</option>
+              <option value="rádio relógio">rádio relógio</option>
+              <option value="roteador">roteador</option>
+              <option value="sanduicheira">sanduicheira</option>
+              <option value="scanner">scanner</option>
+              <option value="secador de cabelo - 1000w">secador de cabelo - 1000W</option>
+              <option value="secadora de roupa">secadora de roupa</option>
+              <option value="serra circular">serra circular</option>
+              <option value="tanquinho">tanquinho</option>
+              <option value="telefone sem fio">telefone sem fio</option>
+              <option value="torneira elétrica - 3250w">torneira elétrica - 3250W</option>
+              <option value="torradeira">torradeira</option>
+              <option value='tv em cores - 14" (tubo)'>tv em cores - 14" (tubo)</option>
+              <option value='tv em cores - 29" (tubo)'>tv em cores - 29" (tubo)</option>
+              <option value='tv em cores - 32" (lcd)'>tv em cores - 32" (lcd)</option>
+              <option value='tv em cores - 40" (led)'>tv em cores - 40" (led)</option>
+              <option value='tv em cores - 42" (led)'>tv em cores - 42" (led)</option>
+              <option value="tv portátil">tv portátil</option>
+              <option value="ventilador de mesa">ventilador de mesa</option>
+              <option value="ventilador de teto">ventilador de teto</option>
+              <option value="videogame">videogame</option>
+
+              <!--sem valor abaixo-->
+              <option value="Ar-condicionado portátil">Ar-condicionado portátil</option>
+              <option value="Caixa de som">Caixa de som</option>
+              <option value="Lâmpada de led">Lâmpada de led</option>
+              <option value="Modem TV a cabo">Modem TV a cabo</option>
+              <option value="lâmpada de led">Lâmpada de led</option>
+
               <option value="Outro">Outro</option>
             </select>
           </div>
-          <div id="input-potencia" class="item-input">
-            <p>Potência (W)</p>
-            <input  class="itens-atributes" name="potencia" type="number" min="0" placeholder="" class="input"  value="">
+          <div class="input-potencia item-input">
+            <p class="label-inputs">Potência (W)</p>
+            <input  class="itens-atributes zerar-valor" name="potencia" type="number" min="0" placeholder="" class="input"  value="">
           </div>
-          <div id="input-quantidade" class="item-input">
-            <p>Quantidade</p>
-            <input class="itens-atributes" name="quantidade" type="number" min="0" placeholder="" class="input" value="">
+          <div class="input-quantidade item-input">
+            <p class="label-inputs">Quantidade</p>
+            <input class="itens-atributes zerar-valor" name="quantidade" type="number" min="0" placeholder="" class="input" value="">
           </div>
-          <div id="input-tempo" class="item-input">
-            <p>Tempo de Uso (horas/dia)</p>
-            <input class="itens-atributes" name="tempo" type="number" min="1" placeholder="" class="input" max="24" value="">
+          <div class="input-tempo item-input">
+            <p class="label-inputs">Tempo de Uso</p>
+            <input class="itens-atributes zerar-valor" name="tempo" type="number" min="1" placeholder="" class="input" value="">
+            <select class="itens-atributes" name="aparelho">
+              <option value="horasDia">horas/dia</option>
+              <option value="minutosDia">minutos/dia</option>
+            </select>
+          </div>
+          <div class="input-dias item-input">
+            <p class="label-inputs">Dias</p>
+            <input class="itens-atributes resetar-dias" name="dias" type="number" min="0" max="31" placeholder="" class="input" value="30">
           </div>
           <div class="action-delete"><p class="action-text">Excluir</p></div>
       </div>
     </section>
+
     <section class="bloco-itens-actions">
       <div class="action-add"><p class="action-text">Adicionar Item</p></div>
       <div class="action-calcular"><p class="action-text">Calcular</p></div>
     </section>
 
   </div>
-<div id="piechart"></div>
-<div id="tablechart"></div>
+  
+  <div id="piechart"></div>
+  <div id="tablechart"></div>
+
+  <div class="bloco-valores-totais" >
+    <p class="label-valores-totais">Total (kWh)</p>
+
+    <input  id="total-kwh" class="valores-totais" name="potenciaTotal" placeholder="Consumo Total kWh" class="input"  value="" readonly>
+    
+    <p class="label-valores-totais">Taxa por (R$/kWh)</p>
+    <input  id="taxa-kwh" class="valores-totais" name="taxaPotencia" type="number" min="0" placeholder="" class="input"  step="0.1" value="1">
+    
+    <p class="label-valores-totais">Total (R$)</p>
+    <input  id="total-reais-gasto" class="valores-totais" name="valorTotal" placeholder="Gasto Total em Reais" class="input"  value="0" readonly >
+
+  </div>
+  <div class="bloco-tabela-potencias">
+    <table id="tablepot">
+      <caption>TABELA DE POTÊNCIAS</caption>
+      <tr><td>Itens</td><td>Potência</td></tr>
+      <tr><td>AR-CONDICIONADO 10.000 BTU</td><td>1.350</td></tr>
+      <tr><td>AR-CONDICIONADO 12.000 BTU</td><td>1.450</td></tr>
+      <tr><td>AR-CONDICIONADO 15.000 BTU</td><td>2.000</td></tr>
+      <tr><td>AR-CONDICIONADO 18.000 BTU</td><td>2.100</td></tr>
+      <tr><td>AR-CONDICIONADO 7.500 BTU</td><td>1.000</td></tr>
+      <tr><td>ASPIRADOR DE PÓ </td><td>600 </td></tr>	
+      <tr><td>CHUVEIRO</td><td>3.500</td></tr>
+      <tr><td>COMPUTADOR DESKTOP (CPU)</td><td>50</td></tr>
+      <tr><td>FERRO DE PASSAR ROUPA</td><td>1.000</td></tr>
+      <tr><td>FOGÃO ELÉTRICO 4 BOCAS</td><td>9120</td></tr>
+      <tr><td>FREEZER HORIZONTAL</td>	<td>500</td></tr>
+      <tr><td>FREEZER VERTICAL</td><td>300</td></tr>
+      <tr><td>GELADEIRA 2 PORTAS</td><td>130</td></tr>
+      <tr><td>GELADEIRA 1 PORTA</td><td>90</td></tr>
+      <tr><td>GELADEIRA SIMPLES </td>	<td>250</td></tr>
+      <tr><td>GELADEIRA DUPLEX 	</td><td>500</td></tr>
+      <tr><td>IMPRESSORA</td><td>75</td></tr>
+      <tr><td>LÂMPADA FLUORESCENTE 10W</td><td>10</td></tr>
+      <tr><td>LÂMPADA FLUORESCENTE 15W</td><td>15</td></tr> 
+      <tr><td>LÂMPADA FLUORESCENTE 20W</td><td>20</td></tr>
+      <tr><td>LÂMPADA FLUORESCENTE 25W</td><td>25</td></tr>
+      <tr><td>LÂMPADA INCANDESCENTE 100W</td><td>100</td></tr>
+      <tr><td>LÂMPADA INCANDESCENTE 60W</td><td>60</td></tr>
+      <tr><td>LÂMPADA INCANDESCENTE 80W</td><td>80</td></tr>
+      <tr><td>LÂMPADA LED 12W</td><td>12</td></tr>
+      <tr><td>LÂMPADA LED 15W</td><td>15</td></tr>
+      <tr><td>LÂMPADA LED 7W</td><td>7</td></tr>                         
+      <tr><td>LÂMPADA LED 9W</td><td>9</td></tr>
+      <tr><td>MÁQUINA DE COSTURA</td><td>100</td></tr>
+      <tr><td>MÁQUINA DE LAVAR LOUÇA</td><td>1500</td></tr>
+      <tr><td>MÁQUINA DE LAVAR ROUPA</td><td>500</td></tr>
+      <tr><td>MÁQUINA DE SECAR ROUPA GRANDE</td><td>3.500</td></tr>
+      <tr><td>MÁQUINA DE SECAR ROUPA PEQUENA</td><td>1.000</td></tr>
+      <tr><td>MICRO-ONDAS</td><td>1200</td></tr>
+      <tr><td>MONITOR</td><td>85</td></tr>
+      <tr><td>NOTEBOOK</td><td>30</td></tr>
+      <tr><td>SECADOR DE CABELO GRANDE</td><td>1.400</td></tr>
+      <tr><td>SECADOR DE CABELO PEQUENO</td><td>600</td></tr>
+      <tr><td>TELEVISÃO 20"</td><td>90</td></tr>
+      <tr><td>TELEVISÃO 29"</td><td>110</td></tr>
+      <tr><td>VENTILADOR DE TETO</td><td>120</td></tr>
+      <tr><td>VENTILADOR DE CHÃO PEQUENO</td><td>65</td></tr>
+      <tr><td>VÍDEO GAME</td><td>15</td></tr>
+      </table>
+  </div>
+
 {% endblock conteudo %}
   
-
 {% block scriptpagina %}
-  <script type="application/javascript" src="{% static 'principal/js/calculadora.js' %}"></script>
+  <script type="text/javascript" src="{% static 'principal/js/calculadora.js' %}"></script>
 {% endblock scriptpagina %}
 
 
