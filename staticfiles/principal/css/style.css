@@ -13,7 +13,7 @@ html, body {
 body {
     background-color: #ffffff;
     height: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/logo-lampada.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../img/logo-lampada.png");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

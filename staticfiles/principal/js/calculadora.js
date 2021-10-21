@@ -6,6 +6,7 @@ const objetoItens = new Map([
 ["aquecedor de ambiente",1612],
 ["aquecedor de mamadeira",100],
 ["aquecedor de marmita",60],
+["ar-condicionado portátil",1286],
 ["ar-condicionado tipo janela menor ou igual a 9.000 btu/h",537],
 ["ar-condicionado tipo janela de 9.001 a 14.000 btu/h",757],
 ["ar-condicionado tipo janela maior que 14.000 btu/h",1558],
@@ -21,6 +22,8 @@ const objetoItens = new Map([
 ["bomba d'água 1/3 cv",410],
 ["cafeteira elétrica",219],
 ["cafeteira expresso",794],
+["caixa amplificadora de som",570],
+["caixa de som portátil",33],
 ["chaleira elétrica",941],
 ["churrasqueira elétrica",3800],
 ["chuveiro elétrico 5500w",5500],
@@ -53,11 +56,16 @@ const objetoItens = new Map([
 ["lâmpada incandescente - 40w",40],
 ["lâmpada incandescente - 60w",60],
 ["lâmpada incandescente - 100w",100],
+["lâmpada led 7w",7],
+["lâmpada led 9w",9],
+["lâmpada led 12w",12],
+["lâmpada led 15w",15],
 ["lavadora de louças",1559],
 ["lavadora de roupas",147],
 ["liquidificador",213],
 ["máquina de costura",100],
 ["modem de internet",8],
+["modem tv a cabo",10.25],
 ["monitor",55],
 ["monitor lcd",34],
 ["multiprocessador",428],
@@ -163,7 +171,6 @@ function calcularKWh(){
 	for (let x =0; x < blockLista.length;x++) {
 		let inputLista = blockLista[x].querySelectorAll(".itens-atributes");
 		let eletro = new Eletro(inputLista[0].value,inputLista[1].value,inputLista[2].value,inputLista[3].value, inputLista[4].value,inputLista[5].value);
-		console.log(eletro);
 		listaEletros.push(eletro);
 		somaTotal += eletro.gasto;
 	}
@@ -211,7 +218,6 @@ function drawChart() {
 	data.addColumn('string', 'Aparelho');
 	data.addColumn('number', 'Uso Total (kWh)');
 	for (let v =0;v < listaEletros.length;v++){
-		console.log(listaEletros[v].getListaDados());
 		data.addRow(listaEletros[v].getListaDados());
 	}
 
