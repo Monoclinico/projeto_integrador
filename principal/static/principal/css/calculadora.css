@@ -94,7 +94,7 @@ text-align: center;
   border-radius: 10px;
   overflow-y: hidden;
   width: auto;
-  padding: 10px;
+  padding: 4px;
 }
 
 .item-input  {
@@ -229,6 +229,32 @@ table#tablepot td {
 .input-dias input {
   max-width: 50px;
 }
+
+.seletor-aparelhos {
+  text-transform: capitalize;
+  font-size: 0.8em;
+  max-width: 100%;
+}
+
+#button-conferir-2 {
+  width: 100%;
+  margin: 5px auto 5px;
+  display: block;
+  text-decoration: none;
+  background-color: #1b2d51;
+  font-size: 2em;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+  color: white;
+  border-top: 2px solid #fdce58;
+  border-bottom: 2px solid #fdce58;
+}
+
+#button-conferir:hover {
+  background-color: #0e0b1b;
+}
+
 /*--------*/
 #piechart {
   display: block;
@@ -279,8 +305,8 @@ table#tablepot td {
 
 @media screen and (max-width: 767px) {
   .itens-inputs {
-    grid-template-columns: max-content min-content;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: min-content;
+    grid-template-rows: auto auto auto auto auto;
     grid-gap: 1%;
     overflow-x: scroll;
     justify-content: space-evenly;
@@ -294,6 +320,11 @@ table#tablepot td {
   }
   .texto-D {
     font-size: 1em;
+  }
+
+  .seletor-aparelhos {
+    max-width: 75%;
+    font-size: 0.75em;
   }
 }
 

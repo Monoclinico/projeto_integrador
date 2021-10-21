@@ -10,7 +10,7 @@
   position: relative;
   display:block;
   width: 100%;
-height: auto;
+  height: auto;
   padding: 10px;
 }
 
@@ -23,11 +23,10 @@ height: auto;
   text-align: center;
 }
 
-
 .titulo-bloco-conteudo {
     display: block;
     font-size: 2.1em;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: center;
     font-weight: 400;
     padding: 5px;
@@ -41,7 +40,7 @@ height: auto;
     overflow: hidden;
     padding: 10px;
     margin: 20px 10px;
-    background-color: #ffffff00;
+    background-color: #1b2d51;
     box-sizing: border-box;
     border-radius: 15px;
     border: 1px solid #1b2d51;
@@ -50,7 +49,7 @@ height: auto;
 
 .texto-D {
   font-size: 1.5em;
-  color: black;
+  color: rgb(255, 255, 255);
   margin: 0;
   line-height: 1.4;
   font-weight: 500;
@@ -58,9 +57,32 @@ height: auto;
   text-align: center;
 }
 
+.lista-links {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-links li {
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.lista-links li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
 @media screen and (max-width: 767px) {
   .texto-D {
     font-size: 1em;
+  }
+  .titulo-bloco-conteudo {
+    font-size: 1.2em;
   }
   .bloco-titulo-main h1 {
     font-size: 1.2em;
