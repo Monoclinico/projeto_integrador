@@ -1,62 +1,3 @@
-.bloco-img-principal {
-  position: relative;
-  display:block;
-  margin-top: 90px;
-  width: 100%;
-  height: auto;
-  background-color: #1b2d51;
-}
-.bloco-titulo-main{ 
-  position: relative;
-  display:block;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-}
-
-.bloco-titulo-main h1 {
-  font-size: 2em;
-  font-weight: 800;
-  color: white;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.titulo-bloco-conteudo {
-    display: block;
-    font-size: 2.1em;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-weight: 400;
-    padding: 5px;
-    border-bottom: 2px solid #1b2d51;
-}
-
-.bloco-conteudo-principal {
-    position: relative;
-    max-width: 100%;
-    height: auto;
-    overflow: hidden;
-    padding: 10px;
-    margin: 20px 10px;
-    background-color: #1b2d51;
-    box-sizing: border-box;
-    border-radius: 15px;
-    border: 1px solid #1b2d51;
-    box-shadow: 2px 2px 1px #1b2d51;
-}
-
-.texto-D {
-  font-size: 1.5em;
-  color: rgb(255, 255, 255);
-  margin: 0;
-  line-height: 1.4;
-  font-weight: 500;
-  text-indent: 20px;
-  text-align: center;
-}
-
 .lista-links {
     list-style: none;
     padding: 0;
@@ -68,19 +9,16 @@
     margin-bottom: 20px;
     text-align: center;
     padding: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffebca;
 }
 
 .lista-links li a{
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     font-size: 1.2em;
 }
 
 @media screen and (max-width: 767px) {
-  .texto-D {
-    font-size: 1em;
-  }
   .titulo-bloco-conteudo {
     font-size: 1.2em;
   }

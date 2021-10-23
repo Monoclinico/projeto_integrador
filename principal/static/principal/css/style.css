@@ -8,7 +8,9 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
+
 
 body {
     background-color: #ffffff;
@@ -17,7 +19,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    overflow-x: hidden;
     position: relative;
 }
 
@@ -26,6 +27,84 @@ body {
     position: relative;
     margin-top: 80px;
     margin-bottom: 200px;
+}
+
+.bloco-conteudo-principal {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+    margin: 20px 10px;
+    background-color: #ffffff00;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 1px solid #1b2d51;
+    box-shadow: 2px 2px 1px #1b2d51;
+}
+
+.titulo-bloco-conteudo {
+    display: block;
+    font-size: 2.1em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #ffebca;
+    border-bottom: 2px solid #1b2d51;
+}
+
+.bloco-img-principal {
+    position: relative;
+    display:block;
+    margin-top: 90px;
+    width: 100%;
+    height: auto;
+    background-color: #1b2d51;
+  }
+  .bloco-titulo-main{ 
+    position: relative;
+    display:block;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .bloco-titulo-main h1 {
+    font-size: 2em;
+    font-weight: 800;
+    color: white;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+.texto-D {
+    font-size: 1.5em;
+    color: black;
+    margin: 5px 0 0 0;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.button-conferir-2 {
+    width: 100%;
+    margin: 5px auto 5px;
+    display: block;
+    text-decoration: none;
+    background-color: #377e25;
+    font-size: 2em;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid #1b2d51;
+}
+  
+.button-conferir-2:hover {
+    background-color: #235018;
 }
 
 .footer-principal {
@@ -66,9 +145,30 @@ body {
     font-size: 2em;
     background-color: #fdce58;
 }
+.svg-images {
+    max-width: 300px;
+    max-height: 300px;
+    margin:10px;
+}
+.svg-images-r {
+    float:right;
+}
+.svg-images-l {
+    float:left;
+}
 
 @media screen and (max-width: 767px) {
+    .titulo-bloco-conteudo {
+        font-size: 1.2em;
+    }
     .footer-principal p {
         font-size: 0.8em;
+    }
+    #button-conferir-2 {
+        font-size: 1.4em;
+        padding: 5px;
+    }
+    .texto-D {
+        font-size: 1em;
     }
 }

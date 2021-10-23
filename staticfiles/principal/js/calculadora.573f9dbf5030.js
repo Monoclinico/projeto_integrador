@@ -108,7 +108,7 @@ function colocarItensListaSuspensa(){
 
 }
 
-function  duplicarItemLinha() {
+function duplicarItemLinha() {
 	let item = document.getElementsByClassName("bloco-itens-list") ;
 	if (item.length > 0 ){
 		let grade = item[0];
