@@ -7,7 +7,7 @@
 {% endblock linksadicionais %}
   
 {% block conteudo %}
-  <div class="bloco-img-principal">
+  <div class="bloco-titulo-principal">
     <div class="bloco-titulo-main">
         <h1 >Calculadora Energética</h1>
     </div>
@@ -348,20 +348,24 @@
 
   <div class="bloco-valores-totais" >
     <p class="label-valores-totais">Total (kWh)</p>
-
+    <p>
+      Consumo total simulado dos aparelhos inseridos na calculadora:
+    </p>
     <svg version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 88.408 88.408" style="enable-background:new 0 0 88.408 88.408;" xml:space="preserve">
       <g>
         <polygon style="fill:yellow" points="67.41,0 34.256,0 20.999,47.732 34.283,47.732 22.988,88.408 26.967,88.408 65.418,40.674 45.939,40.674  "/>
       </g>
       </svg>
     <input  id="total-kwh" class="valores-totais" name="potenciaTotal" placeholder="Consumo Total kWh" class="input"  value="" readonly>
-
+      <hr class="linhas-divisorias" />
+    <p class="label-valores-totais">Custo por kWh</p>
     <p>
+      Como descobrir o custo por kWh:<br/>
       1- Localize na sua conta de energia o seu consumo em kWh<br/>
-      2- Divida o valor total da sua conta pelos kWh<br/>
-      3- Exemplo: R$ 297,92 / 366kW = R$ 0.81
+      2- Divida o valor total da sua conta pelo consumo<br/>
+      3- Exemplo: R$ 268,56 / 340kWh = R$ 0,78 por kWh<br/>
+      4- Insira o resultado abaixo:
     </p>
-    <p class="label-valores-totais">Taxa por (R$/kWh)</p>
     <svg version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
       <path style="fill:#78B591;" d="M44.915,54.466c0-25.711,21.323-46.63,47.536-46.63c26.21,0,68.463,10.338,68.463,36.049v169.435  c0,8.73,3.674,15.806-5.224,15.806H137.14c-3.616,4.884-9.403,8.063-15.947,8.063c-5.518,0-10.509-2.255-14.106-5.89  c-3.598,3.635-8.588,5.89-14.106,5.89s-10.509-2.255-14.106-5.89c-3.598,3.635-8.588,5.89-14.106,5.89  c-10.964,0-19.853-8.889-19.853-19.853c0-0.728,0-3.385,0-4.018V54.466z"/>
       <path style="opacity:0.1;enable-background:new    ;" d="M66.108,76.409c0-25.711,21.322-46.63,47.535-46.63  c13.99,0,32.55,2.947,46.817,9.603C155.85,16.961,117.072,7.837,92.45,7.837c-26.212,0-47.534,20.919-47.534,46.63v158.855  c0,0.632,0,3.288,0,4.018c0,10.964,8.889,19.853,19.853,19.853c0.493,0,0.976-0.039,1.459-0.074  C66.155,236.508,66.108,76.409,66.108,76.409z"/>
@@ -414,9 +418,11 @@
       </g>
       <g>
       </g>
-      </svg>
-    <input  id="taxa-kwh" class="valores-totais" name="taxaPotencia" type="number" min="0" placeholder="" class="input"  step="0.1" value="1">
+    </svg>
+    <input  id="taxa-kwh" class="valores-totais" name="taxaPotencia" type="number" min="0" placeholder="0.78" class="input"  step="0.1" value="0.78">
+    <hr class="linhas-divisorias" />
     <p class="label-valores-totais">Total (R$)</p>
+    <p>O valor abaixo desconsidera impostos e tarifação por bandeira</p>
     <svg version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
       <g>
         <g>
@@ -479,13 +485,8 @@
       </g>
       </svg>
     <input  id="total-reais-gasto" class="valores-totais" name="valorTotal" placeholder="Gasto Total em Reais" class="input"  value="0" readonly >
-    <p>Do valor acima são acrescidos impostos + tarifação por bandeira</p>
   </div>
   <div class="bloco-conteudo-principal">
-    <!--h2 class="titulo-bloco-conteudo">Aprenda a economizar</h2>
-    <p class="texto-D">
-      Clique no botão abaixo e veja com economizar energia:
-    </p-->
     <a class="button-conferir-2" href="{% url 'principal:aprendaeconomizar' %}" title="aprendaeconomizar">Clique aqui e aprender a economizar</a>
   </div> 
   <div class="bloco-conteudo-principal">

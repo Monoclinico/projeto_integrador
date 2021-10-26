@@ -176,15 +176,15 @@ function calcularKWh(){
 	}
 
 	valueTotalKWH.value = somaTotal;
-	valueTotalReais.value = somaTotal * valueTaxaKWH.value;
+	valueTotalReais.value = "R$ " + ((somaTotal * valueTaxaKWH.value).toFixed(2).toString());
 
 }
 function calcularKWhTotal(){
 	let valueTotalKWH = document.getElementById("total-kwh");
 	let valueTaxaKWH = document.getElementById("taxa-kwh");
 	let valueTotalReais = document.getElementById("total-reais-gasto");
-	let tempValor =valueTotalKWH.value * valueTaxaKWH.value
-	valueTotalReais.value = tempValor.toFixed(2);
+	let tempValor =valueTotalKWH.value * valueTaxaKWH.value;
+	valueTotalReais.value = "R$ " + (tempValor.toFixed(2).toString());
 }
 
 class Eletro {

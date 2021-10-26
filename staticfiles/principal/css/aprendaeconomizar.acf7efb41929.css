@@ -12,17 +12,19 @@
     background-color: #ffebca;
 }
 
-.lista-links li a{
+.lista-links li a {
     text-decoration: underline;
     color: black;
     font-size: 1.2em;
 }
+.texto-E {
+    text-align: center; 
+    font-weight: 600;
+    font-size: 2em;
+}
 
 @media screen and (max-width: 767px) {
-  .titulo-bloco-conteudo {
-    font-size: 1.2em;
-  }
-  .bloco-titulo-main h1 {
-    font-size: 1.2em;
-  }
+    .texto-E {
+        font-size: 1.2em;
+    }
 }
