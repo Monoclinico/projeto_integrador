@@ -1,35 +1,33 @@
-{% load static %}
-<header>
-  <div class="header-container">
-    <div class="float-l menu-logo">
-        <a href="{% url 'principal:index' %}"><img src="{% static 'principal/img/logo.png' %}" alt="logo consumo consciente"></a>
-    </div>
-    
-    <input type="checkbox" id="control-nav" />
-    <label for="control-nav" class="control-nav"></label>
-    <label for="control-nav" class="control-nav-close"></label>
-
-    <nav class="float-l menu-itens">
-      <label for="control-nav" class="control-nav-close-x">X</label>
-      <ul class="list-auto">
-        <li class="float-l" >
-          <a href="{% url 'principal:index' %}" title="Início">Início</a>
-        </li >
-        <li class="float-l dropdown">
-          <a href="#" title="Lista">Informações</a>
-          <div class="dropdown-content">
-            <a href="{% url 'principal:resultados' %}">Resultados</a>
-            <a href="{% url 'principal:aprendaeconomizar' %}">Aprenda a economizar</a>
-            <a href="{% url 'principal:referencias' %}">Referências</a>
-          </div>
-        </li >
-        <li class="float-l">
-            <a href="{% url 'principal:calculadora' %}" title="Calculadora">Simular Consumo</a>
-        </li >
-        <li class="float-l">
-          <a href="{% url 'principal:sobre' %}" title="Sobre">Sobre</a>
-        </li>
-      </ul>
+{% load static %}      
+        
+<!-- Navbar & Hero Start -->
+<div class="container-xxl position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="{% url 'principal:index' %}" class="navbar-brand p-0">
+            <img src="{% static 'principal/img/logo-principal.png' %}" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="{% url 'principal:index' %}" class="nav-item nav-link active">Início</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informações</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{% url 'principal:resultados' %}" class="dropdown-item">Resultados</a>
+                        <a href="{% url 'principal:aprendaeconomizar' %}" class="dropdown-item">Aprenda a Economizar</a>
+                        <a href="{% url 'principal:referencias' %}" class="dropdown-item">Referências</a>
+                    </div>
+                </div>
+                <a href="{% url 'principal:sobre' %}" class="nav-item nav-link">Sobre</a>
+            </div>
+            <butaton type="button" class="btn text-secondary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+            <a href="{% url 'principal:calculadora' %}" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Simular Consumo</a>
+            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="alto-contraste" title="Ativar Alto-contraste"><i class="alto-contraste fa fa-adjust"></i><strong>Alto-contraste</strong></a>
+            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A+</strong></a>
+            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A-</strong></a>
+        </div>
     </nav>
-  </div>
-</header>
+</div>
+<!-- Navbar & Hero End -->

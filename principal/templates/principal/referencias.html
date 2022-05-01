@@ -5,7 +5,23 @@
   <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/referencias.css' %}"/>
 {% endblock linksadicionais %}
 
-{% block conteudo %}
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-principal hero-header mb-5">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Referências</h1>
+                    <p class="text-white pb-3 animated zoomIn">{% lorem %}</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid svg-images svg-images-l img-titulo-pagina" style="background-color: #fff; border-radius: 100%;" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+{% block corpo %}
     <div class="bloco-titulo-principal">
         <div class="bloco-titulo-main">
             <h1 >Referências</h1>
@@ -32,7 +48,7 @@
         </ul>
     </div> 
     
-{% endblock conteudo %}
+{% endblock corpo %}
 
 
 

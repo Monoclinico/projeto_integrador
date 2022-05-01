@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include, re_path
-
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('ccprojetointegrador/admin/', admin.site.urls),

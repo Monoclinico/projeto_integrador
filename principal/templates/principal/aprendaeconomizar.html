@@ -5,12 +5,24 @@
   <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/aprendaeconomizar.css' %}"/>
 {% endblock linksadicionais %}
 
-{% block conteudo %}
-    <div class="bloco-titulo-principal">
-        <div class="bloco-titulo-main">
-            <h1 >Aprenda a Economizar</h1>
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-principal hero-header mb-5">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Aprenda a Economizar</h1>
+                    <p class="text-white pb-3 animated zoomIn">{% lorem %}</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid svg-images svg-images-l img-titulo-pagina" style="background-color: #fff; border-radius: 100%;" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="">
+                </div>
+            </div>
         </div>
     </div>
+{% endblock titulopagina %}
+
+
+{% block corpo %}
     <div class="bloco-conteudo-principal">
         <h2 class="titulo-bloco-conteudo">Clique nos links abaixo com dicas sobre como economizar energia em diversos aparelhos.</h2>
         <p class="texto-E">Dicas de consumo:</p>
@@ -30,7 +42,7 @@
         </ul>
     </div> 
     
-{% endblock conteudo %}
+{% endblock corpo %}
 
 
 

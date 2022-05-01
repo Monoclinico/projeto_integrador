@@ -21,4 +21,4 @@ def sobre(request):
     return render(request=request,template_name="principal/sobre.html")
 
 def pagina_inexistente(request):
-    return render(request=request, template_name="principal/nonexistent_page.html")
+    return render(request=request, template_name="principal/404.html")
