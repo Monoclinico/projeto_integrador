@@ -1,9 +1,42 @@
 /********** Template CSS **********/
 :root {
-    --primary: #263066;/*#2124B1;*/
-    --secondary: #4777F5;
-    --light: #F7FAFF;
+    --primary: #157145;
+    --secondary: #246eb9;
+    --tertiary: #94c842;
+    --quaternary: #fe6d73;
+    --light: #eadeda;
     --dark: #1D1D27;
+    
+}
+
+*,
+ :before,
+ :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.navbar-titulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.navbar-titulo h1{
+    font-size: 1.4rem;
+    margin: 10px;
 }
 
 .corpo-principal {
@@ -21,8 +54,48 @@
     color: black;
 }
 
-.cor-principal {
+.img-sobre-perfil {
+    max-width: 100%;
+    height: min-content;
+    align-self: flex-end;
+}
+
+/*** Cores ***/
+.cor-fundo-1 {
     background-color: var(--primary) !important;
+}
+.cor-fundo-2 {
+    background-color: var(--secondary) !important;
+}
+.cor-fundo-3 {
+    background-color: var(--tertiary) !important;
+}
+.cor-fundo-4 {
+    background-color: var(--quaternary) !important;
+}
+.cor-fundo-5 {
+    background-color: var(--light) !important;
+}
+.cor-fundo-6 {
+    background-color: var(--dark) !important;
+}
+.cor-fonte-1 {
+    color: var(--primary) !important;
+}
+.cor-fonte-2 {
+    color: var(--secondary) !important;
+}
+.cor-fonte-3 {
+    color: var(--tertiary) !important;
+}
+.cor-fonte-4 {
+    color: var(--quaternary) !important;
+}
+.cor-fonte-5 {
+    color: var(--light) !important;
+}
+.cor-fonte-6 {
+    color: var(--dark) !important;
 }
 
 /*** Spinner ***/
@@ -114,7 +187,7 @@ h6,
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--secondary) !important;
+    color: var(--tertiary) !important;
 }
 
 .navbar-light .navbar-brand h1 {

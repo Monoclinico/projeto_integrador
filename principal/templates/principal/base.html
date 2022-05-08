@@ -10,7 +10,12 @@
     <link rel="icon" type="image/x-icon" href="{% static 'principal/img/logo-principal.ico' %}"/>
 
     <!--Title-->
-    <title>Consumo Consciente</title>
+    <title>
+        {% if nome %}
+            {{ nome }} -
+        {% endif %}
+        Consumo Consciente 
+    </title>
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!--link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/style.css' %}"/-->
@@ -59,7 +64,7 @@
         {% endblock corpo %}
         {% include "./footer.html" %}
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg cor-fundo-3 btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up cor-fonte-2"></i></a>
     
     </div>
     <!-- JavaScript Libraries -->

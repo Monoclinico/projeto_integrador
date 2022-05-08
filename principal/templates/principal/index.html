@@ -2,14 +2,13 @@
 {% load static %}
 
 {% block titulopagina %}
-    <div class="container-xxl py-5 cor-principal hero-header mb-5">
+    <div class="container-xxl py-5 cor-fundo-1 hero-header mb-5">
         <div class="container my-5 py-5 px-lg-5">
             <div class="row g-5 py-5">
                 <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="text-white mb-4 animated zoomIn">Calculadora de Energia Elétrica</h1>
                     <p class="text-white pb-3 animated zoomIn">Entenda melhor o seu consumo de energia e crie novos hábitos</p>
                     <a href="{% url 'principal:calculadora' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Simular Consumo</a>
-                    <!--a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">%Vazio%</a-->
                 </div>
                 <div class="col-lg-6 text-center text-lg-start">
                     <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/equipe-se-ajudando-lampada.svg' %}" alt="">
@@ -20,24 +19,6 @@
 {% endblock titulopagina %}
 
 {% block corpo %}
-
-        <!-- Full Screen Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
-                    <div class="modal-header border-0">
-                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center justify-content-center">
-                        <div class="input-group" style="max-width: 600px;">
-                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
-                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Full Screen Search End -->
 
         <div class="container-xxl py-5">
             <div class="container px-lg-5">
@@ -87,12 +68,12 @@
         </div>
 
         <!-- Início Bloco do botão para simular -->
-        <div class="container-xxl cor-principal newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl cor-fundo-1 newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container px-lg-5">
                 <div class="row align-items-center" style="height: 250px;">
                     <div class="col-12 col-md-6">
                         <h3 class="text-white">Simule seu consume de energia</h3>
-                        <small class="text-white">{% lorem %}</small>
+                        <small class="text-white">{% lorem 20 w random %}</small>
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
                         <a href="{% url 'principal:calculadora' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Simular Consumo</a>
