@@ -98,59 +98,145 @@ const objetoItens = new Map([
 ["videogame",24],
 ]);
 
-
 let listaEletros= [];
 
-function colocarItensListaSuspensa(){
-	let listaSupensa = document.getElementsByClassName("seletor-aparelhos")[0];
-	const option = document.createElement("option");
-	listaSupensa.appendChild(option);
-
+/*Função para preencher lista das opções de itens*/
+function preencherListaItens(){
+	let lista = document.getElementById("lista-aparelhos");
+	objetoItens.forEach(function(v,k){
+		let opt = document.createElement("option");
+		opt.value = k.toString();
+		lista.appendChild(opt);
+	});
 }
 
+
+/*Função para duplicar o item*/
 function duplicarItemLinha() {
-	let item = document.getElementsByClassName("bloco-itens-list") ;
+	let item = document.getElementsByClassName("bloco-itens-list");
 	if (item.length > 0 ){
 		let grade = item[0];
 		let linha1 = grade.children[0].cloneNode(true);
 		let inputsFilhos = linha1.querySelectorAll(".zerar-valor");
-		linha1.querySelectorAll(".resetar-dias")[0].value = "30";
 		for(let x = 0;x<inputsFilhos.length;x++){
-			inputsFilhos[x].value = "";
+			inputsFilhos[x].innerHTML = "";
 		}
-		linha1.querySelectorAll(".seletor-aparelhos")[0].addEventListener("change", function () {
-			linha1.querySelectorAll(".input-potencia")[0].children[1].value = objetoItens.get(this.value.toLowerCase());
-		});
-
 		let button = linha1.lastElementChild;
+		let editButton = linha1.children[5];
+		editButton.addEventListener("click", function() {
+			editarValores(this);
+		});
 		button.style.visibility = "visible";
+		button.style.display = "flex";
 		button.addEventListener("click", function () {
 			deletarItemLinha(this);
 		});
 		grade.appendChild(linha1);
 	}
+	let editButton = document.getElementsByClassName("action-editar");
+	editarValores(editButton[(editButton.length)-1]);
 }
 
+/*Função para excluir item*/ 
 function deletarItemLinha(item){
 	item.parentElement.remove();
 }
 
+function mostrarBloco(){
+    const bloco = document.getElementById("bloco-popup");
+    bloco.style.display ="block";
+}
 
-function setListeners() {
-	let seletor = document.getElementsByClassName("itens-inputs");
-	let addButton = document.getElementsByClassName("action-add");
-	let calcularButton = document.getElementsByClassName("action-calcular");
-	let valueTaxaKWH = document.getElementById("taxa-kwh");
-	if(seletor.length > 0){
-		seletor[0].children[0].children[1].addEventListener("change", function () {
-			seletor[0].querySelectorAll(".input-potencia")[0].children[1].value = objetoItens.get(this.value.toLowerCase());
-		});
+function fecharBloco(){
+    const bloco = document.getElementById("bloco-popup");
+    bloco.style.display ="none";
+}
+
+function adicionarValores(item){
+	const bloco = document.getElementById("bloco-info");
+	let inputs = bloco.querySelectorAll(".itens-atributes-pop");
+	let listaAtributos = item.parentElement.querySelectorAll(".itens-atributes");
+	if (listaAtributos.length > 0 ){
+		listaAtributos[0].innerHTML = inputs[0].value;
+		listaAtributos[1].innerHTML = validarNumero(inputs[1].value);
+		listaAtributos[2].innerHTML = validarNumero(inputs[2].value);
+		if(inputs[4].value == "horasDia"){
+			listaAtributos[3].innerHTML =  `${validarNumero(inputs[3].value)} ${inputs[4].children[0].innerHTML}`;
+		}else {
+			listaAtributos[3].innerHTML =  `${validarNumero(inputs[3].value)} ${inputs[4].children[1].innerHTML}`;
+		}
+
+		listaAtributos[4].innerHTML = validarNumero(inputs[5].value);
+		
+	}
+	fecharBloco();
+}
+
+function validarNumero(num) {
+	if(isNaN(num) || (num == null) ) {
+		return 0;
+	}
+	if ((typeof num == typeof undefined)){
+		return 0;
+	}
+	if ((num == '')){
+		return 0;
+	}
+	if(num < 0){
+		return (num * (-1));
+	}
+	return num;
+}
+
+function editarValores(item){
+	mostrarBloco();
+	let itens = item.parentElement.querySelectorAll(".itens-atributes");
+	let bloco = document.getElementById("bloco-info");
+	let inputs = bloco.querySelectorAll(".itens-atributes-pop");
+	inputs[0].value = itens[0].innerHTML;
+	inputs[1].value = itens[1].innerHTML;
+	inputs[2].value = itens[2].innerHTML;
+	let usoDiario = itens[3].innerHTML.split(" ");
+	inputs[3].value = usoDiario[0];
+	if(usoDiario[1] == "horas/dia") {
+		inputs[4].value = "horasDia";
+	}else {
+		inputs[4].value = "minutosDia";
 	}
 
-	if (addButton.length > 0 ){
+	inputs[5].value = itens[4].innerHTML;
+
+	let addValoresButton = document.getElementById("bloco-adicionar"); 
+	if (addValoresButton != null) {
+		let buttonNew = addValoresButton.cloneNode(true);
+		addValoresButton.remove();
+		buttonNew.addEventListener("click", function () {
+			adicionarValores(item);
+		});
+		bloco.appendChild(buttonNew);
+	}
+}
+
+/*Coloca os eventos*/
+function setListeners() {
+	let editButton = document.getElementsByClassName("action-editar"); // botão de editar
+	let closeButton = document.getElementById("bloco-fechar"); //botão de fechar edição
+	let addButton = document.getElementsByClassName("action-add"); //botão de adicionar novo item
+	let calcularButton = document.getElementsByClassName("action-calcular"); // botão de calcular resultado
+	let valueTaxaKWH = document.getElementById("taxa-kwh");
+
+	if (editButton.length > 0) {
+		editButton[0].addEventListener("click", function () {
+			editarValores(this);
+	});
+	}
+	if (addButton.length > 0){
 		addButton[0].addEventListener("click", duplicarItemLinha);
 	}
-	if (calcularButton.length > 0 ){
+
+	closeButton.addEventListener("click",fecharBloco);
+
+	if (calcularButton.length > 0){
 		 calcularButton[0].addEventListener("click", calcularKWh);
 	}
 	valueTaxaKWH.addEventListener("change", calcularKWhTotal);
@@ -158,8 +244,7 @@ function setListeners() {
 }
 
 function calcularKWh(){
-	google.charts.load('current', {'packages':['corechart', 'table']});
-	google.charts.setOnLoadCallback(drawChart);
+
 	let somaTotal = 0;
 
 	let valueTotalKWH = document.getElementById("total-kwh");
@@ -167,26 +252,46 @@ function calcularKWh(){
 	let valueTotalReais = document.getElementById("total-reais-gasto");
 
 	listaEletros = [];
-	let blockLista = document.getElementsByClassName("itens-inputs");
+	let blockLista = document.getElementsByClassName("bloco-itens-list");
 	for (let x =0; x < blockLista.length;x++) {
 		let inputLista = blockLista[x].querySelectorAll(".itens-atributes");
-		let eletro = new Eletro(inputLista[0].value,inputLista[1].value,inputLista[2].value,inputLista[3].value, inputLista[4].value,inputLista[5].value);
+		let usoDiario = inputLista[3].innerHTML.split(" ");
+		let tempoValor = usoDiario[0]; 
+		let tempoTipo = "";
+		if(usoDiario[1] == "horas/dia") {
+			tempoTipo = "horasDia";
+		}else {
+			tempoTipo = "minutosDia";
+		}
+		let eletro = new Eletro(inputLista[0].innerHTML,inputLista[1].innerHTML,inputLista[2].innerHTML,tempoValor, tempoTipo,inputLista[4].innerHTML);
 		listaEletros.push(eletro);
 		somaTotal += eletro.gasto;
 	}
 
-	valueTotalKWH.value = somaTotal;
-	valueTotalReais.value = "R$ " + ((somaTotal * valueTaxaKWH.value).toFixed(2).toString());
+	valueTotalKWH.value = somaTotal.toFixed(2);
+	valueTotalReais.value = "R$ " + ((somaTotal * valueTaxaKWH.value).toFixed(2).toString().replace(".",","));
+	if(somaTotal > 0) {
+		google.charts.load('current', {'packages':['corechart', 'table']});
+		google.charts.setOnLoadCallback(drawChart);
 
+	}else {
+		let mensagem = document.getElementById('piechart');
+		mensagem.style.visibility = "visible";
+		mensagem.innerHTML = "<p style='text-align:center;color:#000'>A potência total deve ser maior que 0kWh para mostrar o gráfico</p>";
+	}
 }
+
+
 function calcularKWhTotal(){
 	let valueTotalKWH = document.getElementById("total-kwh");
 	let valueTaxaKWH = document.getElementById("taxa-kwh");
 	let valueTotalReais = document.getElementById("total-reais-gasto");
 	let tempValor =valueTotalKWH.value * valueTaxaKWH.value;
-	valueTotalReais.value = "R$ " + (tempValor.toFixed(2).toString());
+	valueTotalReais.value = "R$ " + (tempValor.toFixed(2).toString().replace(".",","));
 }
 
+
+/*Classe do Aparelho*/ 
 class Eletro {
 	gasto = 0;
 	constructor(nome, potencia, quantidade, uso, intervalouso, dias){
@@ -241,17 +346,21 @@ function drawChart() {
 		width: '100%', 
 		height: '100%',
 	}
+	let grafico1 = document.getElementById('piechart');
+	let grafico2 = document.getElementById('tablechart');
+	grafico1.style.visibility = 'visible';
+	grafico2.style.visibility = 'visible';
 
-	let pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+	let pieChart = new google.visualization.PieChart(grafico1);
 	pieChart.draw(data, pieOptions);
 	
 	let formatter = new google.visualization.NumberFormat(
 		{suffix: 'kWh',});
 	formatter.format(data, 1); 
 
-	let tableChart = new google.visualization.Table(document.getElementById('tablechart'));
+	let tableChart = new google.visualization.Table(grafico2);
 	tableChart.draw(data, tableOptions);
 }
 
+window.addEventListener("load", preencherListaItens);
 setListeners();
-

@@ -115,8 +115,8 @@ body {
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 40px;
+    bottom: 40px;
     z-index: 99;
 }
 
@@ -154,8 +154,8 @@ h6,
 }
 
 .btn-lg-square {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
 }
 
 .btn-square,
@@ -228,6 +228,11 @@ h6,
     .navbar-light .navbar-brand img {
         max-height: 45px;
     }
+
+    .navbar-light {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -238,6 +243,8 @@ h6,
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
+        padding-left: 9rem;
+        padding-right: 9rem;
     }
     
     .sticky-top.navbar-light {

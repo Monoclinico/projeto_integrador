@@ -65,7 +65,14 @@
         {% include "./footer.html" %}
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg cor-fundo-3 btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up cor-fonte-2"></i></a>
-    
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+
     </div>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -76,6 +83,12 @@
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
     <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <!-- Vlibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
