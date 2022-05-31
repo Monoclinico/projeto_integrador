@@ -284,11 +284,11 @@ h6,
 /*** Hero Header ***/
 .hero-header {
     background:
-        url(../img/bg-dot.png),
-        url(../img/bg-dot.png),
-        url(../img/bg-round.png),
-        url(../img/bg-tree.png),
-        url(../img/bg-bottom-hero.png);
+        url("../img/bg-dot.b4e08492f564.png"),
+        url("../img/bg-dot.b4e08492f564.png"),
+        url("../img/bg-round.f046a3946740.png"),
+        url("../img/bg-tree.429aaa6121ea.png"),
+        url("../img/bg-bottom-hero.2f3b93678b5d.png");
     background-position:
         10px 10px,
         bottom 190px right 10px,
@@ -369,13 +369,13 @@ h6,
     align-items: center;
     justify-content: center;
     color: var(--light);
-    background: url(../img/icon-shape-primary.png) center center no-repeat;
+    background: url("../img/icon-shape-primary.c1216c1969f3.png") center center no-repeat;
     transition: .5s;
 }
 
 .service-item:hover .service-icon {
     color: var(--primary);
-    background: url(../img/icon-shape-white.png);
+    background: url("../img/icon-shape-white.02124c1f09b9.png");
 }
 
 .service-item h5,
@@ -423,8 +423,8 @@ h6,
 .newsletter,
 .testimonial {
     background:
-        url(../img/bg-top.png),
-        url(../img/bg-bottom.png);
+        url("../img/bg-top.f6aa16229c71.png"),
+        url("../img/bg-bottom.273429832e5c.png");
     background-position:
         left top,
         right bottom;
@@ -543,7 +543,7 @@ h6,
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(../img/icon-shape-white.png) center center no-repeat;
+    background: url("../img/icon-shape-white.02124c1f09b9.png") center center no-repeat;
     border: none;
     transition: .5s;
     opacity: 0;
@@ -558,7 +558,7 @@ h6,
 
 /*** Footer ***/
 .footer {
-    background: url(../img/footer.png) center center no-repeat;
+    background: url("../img/footer.e756c57fa536.png") center center no-repeat;
     background-size: contain;
 }
 

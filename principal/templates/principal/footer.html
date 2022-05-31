@@ -6,21 +6,20 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-6">
                 <h5 class="text-white mb-4">Localização</h5>
-                <p><i class="fa fa-map-marker-alt me-3"></i>São Paulo</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+055 11 123456789</p>
-                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Polo de Araçatuba</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Polo de Barueri</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Polo de São Paulo - Campo Limpo</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6">
                 <h5 class="text-white mb-4">Mais Informações</h5>
                 <a class="btn btn-link" href="{% url 'principal:sobre' %}">Sobre nós</a>
-                <a class="btn btn-link" href="">Política de privacidade</a>
             </div>
         </div>
     </div>
@@ -28,14 +27,13 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Projeto Integrador II - UNIVESP - Polo Barueri - SP</a>
+                    &copy; <a class="border-bottom" href="#">Projeto Integrador II - UNIVESP - SP</a>
                     <a class="border-bottom" href="#">2022</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
                         <a href="{% url 'principal:index' %}">Início</a>
-                        <a href="">Cookies</a>
-                        <a href="">Ajuda</a>
+                        <a href="{% url 'principal:sobre' %}">Ajuda</a>
                     </div>
                 </div>
             </div>

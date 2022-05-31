@@ -2,13 +2,12 @@
         
 <!-- Navbar & Hero Start -->
 <div class="container-xxl position-relative p-0">
-    <!--nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"-->
     <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
         <div class="navbar-titulo navbar-brand p-0">
             <a href="{% url 'principal:index' %}">
-                <img src="{% static 'principal/img/logo-principal.png' %}" alt="Logo">
+                <img src="{% static 'principal/img/logo-principal.png' %}" alt="Logo Consumo Consciente">
             </a>
-            <h1>Consumo <br/> Consciente</h1>
+            <p>Consumo <br/> Consciente</p>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
@@ -28,8 +27,8 @@
             </div>
             <a href="{% url 'principal:calculadora' %}" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Simular Consumo</a>
             <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="alto-contraste" title="Ativar Alto-contraste"><i class="alto-contraste fa fa-adjust"></i><strong>Alto-contraste</strong></a>
-            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A+</strong></a>
-            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A-</strong></a>
+            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 mudar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A+</strong></a>
+            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 mudar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A-</strong></a>
         </div>
     </nav>
 </div>

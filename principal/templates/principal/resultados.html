@@ -12,11 +12,10 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="text-white mb-4 animated zoomIn">Resultados da Pesquisa</h1>
-                    <p class="text-white pb-3 animated zoomIn">Resultados da pesquisa inicial: Consumo consciente de energia elétrica 
-                        levantamento inicial</p>
+                    <p class="text-white pb-3 animated zoomIn">Acompanhe abaixo o resultado a primeira pesquisa do projeto, realizada no 2º semestre de 2021, que obteve alguns hábitos de consumo de 68 usuários residenciais.</p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-start">
-                    <img class="img-fluid svg-images svg-images-l img-titulo-pagina" style="background-color: #fff; border-radius: 100%;" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="Aprenda a enconomizar">
                 </div>
             </div>
         </div>
@@ -25,6 +24,10 @@
 
 {% block corpo %}
     <div class="container my-5 py-5 px-lg-5">
+        <div class="section-title position-relative mb-4 pb-2">
+            <h6 class="position-relative text-primary ps-4">Dados</h6>
+            <h2 class="mt-2">Resultados</h2>
+        </div>
         <p class="texto-D">Quando questionado sobre o conhecimento dos gastos de energia pelos eletrodomésticos residenciais, obtivemos a seguinte resposta:</p>
         <div id="piechart" class="bloco-charts"></div>
         <p class="legenda-referencia">Fonte: Autoria Própria</p>
