@@ -41,7 +41,7 @@
     
 </head>
 
-<body>
+<body id="text"> <!-- O ID de "text" serve para aplicar o aumento e diminuição de fonte do menu.html -->
     <div class="container-xxl corpo-principal p-0">
         <!-- Spinner Start -->
             <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -71,6 +71,26 @@
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
     <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <!-- 
+
+    <script>
+
+        let buttons = document.querySelector('.buttons')
+
+        let btn = buttons.querySelectorAll('.btn');
+        for(var i = 0; i < btn.length; i++){
+            btn[i].addEventListener('click', function(){
+
+                let current = document.getElementsByClassName('active');
+                current[0].className = current[0].className.replace("active", "");
+                this.className += "active";
+
+            })
+        }
+
+    </script>
+SCRIPT INTERNOS -->
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
