@@ -23,10 +23,103 @@
                 <a href="{% url 'principal:sobre' %}" class="nav-item nav-link">Sobre</a>
             </div>
             <butaton type="button" class="btn text-secondary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-            <a href="{% url 'principal:calculadora' %}" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Simular Consumo</a>
+            <a href="{% url 'principal:calculadora' %}" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Simular Consumo</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <!--
             <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="alto-contraste" title="Ativar Alto-contraste"><i class="alto-contraste fa fa-adjust"></i><strong>Alto-contraste</strong></a>
             <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A+</strong></a>
-            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i><strong>A-</strong></a>
+            <a href="#" class="btn rounded-pill py-2 px-2 ms-4 " id="diminuir-fonte" title="Diminuir Fonte"><i class="alto-contraste"></i><strong>A-</strong></a>
+            -->
+
+            <!--
+            <button 
+
+                onclick="
+                
+                    const btn = document.getElementById('alto-contraste');
+
+                    btn.addEventListener('change', (e) => {
+                        document.body.classList.toogle('dark', e.target.checked);
+                    })
+
+                
+                " 
+                class="btn rounded-pill py-2 px-2 ms-4 " id="alto-contraste" title="Ativar Alto-contraste" name="autoContraste">
+                <i class="alto-contraste fa fa-adjust">
+                </i>
+
+                <strong>
+                    Alto-contraste
+                </strong>
+
+            </button>
+            -->
+
+
+            <div>
+                <input type="checkbox" class="checkboxDarkMode" id="chk" 
+                    onclick="
+                    console.log('Hello!')
+                    "
+                />
+                <label class="labelDarkMode" for="chk">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ballDarkMode"></div>
+                </label>
+            </div>
+            
+            
+            <button onclick="
+                    let ids = ['#text']; //Estes IDs serão selecionados para aumentar ou diminuir o tamanho da fonte do texto, aonde estiver este ID no html a fonte aumenta ou diminuí. No caso ela foi colocada dentro da tag body na base.html.
+
+                    ids.forEach(id => {
+                        //Pega o elemento.
+                        let el = document.querySelector(id);
+
+                        //Pega o tamanho da fonte.
+                        let fontSize = window.getComputedStyle(el, null).getPropertyValue('font-size');
+
+                        //Converte para o tipo float de dado.
+                        fontSize = parseFloat(fontSize);
+
+                        //Aumenta o tamanho da fonte.
+                        el.style.fontSize = (fontSize + 5) + 'px';
+                    })
+
+            " 
+            class="btn rounded-pill py-2 px-2 ms-4 " id="aumentar-fonte" title="Aumentar Fonte"><i class="alto-contraste"></i>
+                <strong>
+                    A+
+                </strong>
+            </button>
+            
+            <button onclick="
+                    let ids = ['#text']; //Nesse caso é o mesmo no de cima, só que aqui o editor pode acusar um erro de sintaxe, isso é normal, pode deixar assim, não irá interfirir em nada no código.
+
+                    ids.forEach(id => {
+                        //Pega o elemento.
+                        let el = document.querySelector(id);
+
+                        //Pega o tamanho da fonte.
+                        let fontSize = window.getComputedStyle(el, null).getPropertyValue('font-size');
+
+                        //Converte para o tipo float de dado.
+                        fontSize = parseFloat(fontSize);
+
+                        //Aumenta o tamanho da fonte.
+                        el.style.fontSize = (fontSize - 5) + 'px';
+                    })
+
+            " 
+            class="btn rounded-pill py-2 px-2 ms-4 " id="diminuir-fonte" title="Diminuir Fonte">
+                <i class="alto-contraste">
+                </i>
+                <strong>
+                    A-
+                </strong>
+            </button>
+
         </div>
     </nav>
 </div>

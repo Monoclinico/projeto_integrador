@@ -6,6 +6,7 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'principal/img/logo-principal.ico' %}"/>
 
@@ -36,12 +37,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Dark Mode CSS      -->
+
+    <link href="{% static 'principal/css/darkMode.css' %}" rel="stylesheet"/>
+    
     {% block linksadicionais %}
     {% endblock linksadicionais %}
     
 </head>
 
-<body>
+<body id="text"> <!-- O ID de "text" serve para aplicar o aumento e diminuição de fonte do menu.html -->
     <div class="container-xxl corpo-principal p-0">
         <!-- Spinner Start -->
             <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -71,6 +77,25 @@
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
     <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+
+    
+    <script>
+
+        const chk = document.getElementById('chk');
+        const div = document.querySelector('div');
+        const h2 = document.querySelectorAll('h2');
+        const root = document.querySelector(':root');
+
+        chk.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+            div.classList.toggle('dark');
+            h2.forEach(x => x.classList.toggle('dark'));
+            root.classList.toggle('dark');
+        });
+
+    </script>
+    
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
