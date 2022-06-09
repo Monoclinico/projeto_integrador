@@ -6,7 +6,6 @@
     --quaternary: #fe6d73;
     --light: #eadeda;
     --dark: #1D1D27;
-    
 }
 
 *,
@@ -177,14 +176,14 @@ h6,
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    color: var(--light) !important;
+    color: var(--dark);
     outline: none;
     transition: .5s;
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
     padding: 20px 0;
-    color: var(--dark) !important;
+    color: var(--dark);
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -220,7 +219,7 @@ h6,
     .sticky-top.navbar-light .navbar-nav .nav-link {
         padding: 10px 0;
         margin-left: 0;
-        color: var(--dark) !important;
+        color: var(--dark);
     }
 
     .navbar-light .navbar-brand h1 {
