@@ -35,21 +35,21 @@
       <button id="bloco-fechar">X</button>
       <div id="bloco-info">
         <p class="label-inputs-pop">Nome do Aparelho</p>
-        <input class="itens-atributes-pop" name="nomeAparelho" type="text" list="lista-aparelhos" placeholder="Ex: Chuveiro" class="input"  value="">
+        <input id="valorNomeAparelho" class="itens-atributes-pop input" name="nomeAparelho" type="text" list="lista-aparelhos" placeholder="Ex: Chuveiro" value="">
         <datalist id="lista-aparelhos">
         </datalist>
         <p class="label-inputs-pop">Potência (W)</p>
-        <input class="itens-atributes-pop zerar-valor" name="potencia" type="number" min="0" placeholder="Ex: 5500" class="input"  value="">
+        <input id="valorPotencia" class="itens-atributes-pop zerar-valor input" name="potencia" type="number" min="0" placeholder="Ex: 5500" value="">
         <p class="label-inputs-pop">Quantidade</p>
-        <input class="itens-atributes-pop zerar-valor" name="quantidade" type="number" min="0" placeholder="Ex: 1" class="input" value="">
+        <input class="itens-atributes-pop zerar-valor input" name="quantidade" type="number" min="0" placeholder="Ex: 1" value="">
         <p class="label-inputs-pop">Tempo de Uso</p>
-        <input class="itens-atributes-pop zerar-valor" name="tempo" type="number" min="1" placeholder="Ex: 12" class="input" value="">
+        <input class="itens-atributes-pop zerar-valor input" name="tempo" type="number" min="1" placeholder="Ex: 12" value="">
         <select class="itens-atributes-pop" name="aparelho">
           <option value="horasDia">horas/dia</option>
           <option value="minutosDia">minutos/dia</option>
         </select>
         <p class="label-inputs-pop">Dias</p>
-        <input class="itens-atributes-pop resetar-dias" name="dias" type="number" min="0" max="31" placeholder="Ex: 30" class="input" value="30">
+        <input class="itens-atributes-pop resetar-dias input" name="dias" type="number" min="0" max="31" placeholder="Ex: 30" value="30">
         <button id="bloco-adicionar" >Adicionar</button>
       </div>
     </div>

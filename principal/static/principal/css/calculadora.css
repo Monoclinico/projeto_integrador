@@ -267,6 +267,20 @@
     margin: 0;
     color: #ffffff;
 }
+.tabela-titulo {
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+}
+.tabela-celula {
+    color: #000;
+    font-weight: 600;
+    text-align: right;
+}
+
+.tabela-linha {
+    background-color: #e9e7e7;
+}
 
 @media screen and (max-width: 767px) {
     .item-input p {

@@ -103,13 +103,23 @@ let listaEletros= [];
 /*Função para preencher lista das opções de itens*/
 function preencherListaItens(){
 	let lista = document.getElementById("lista-aparelhos");
+	let nome = document.getElementById("valorNomeAparelho");
 	objetoItens.forEach(function(v,k){
 		let opt = document.createElement("option");
 		opt.value = k.toString();
 		lista.appendChild(opt);
 	});
+	nome.addEventListener("change",function(){
+		preencherValorPadrao(this);
+	});
 }
 
+function preencherValorPadrao(nome){
+	let potencia = document.getElementById("valorPotencia"); 
+	if(objetoItens.has(nome.value)){
+		potencia.value = objetoItens.get(nome.value);
+	}
+} 
 
 /*Função para duplicar o item*/
 function duplicarItemLinha() {
@@ -252,7 +262,7 @@ function calcularKWh(){
 	let valueTotalReais = document.getElementById("total-reais-gasto");
 
 	listaEletros = [];
-	let blockLista = document.getElementsByClassName("bloco-itens-list");
+	let blockLista = document.getElementsByClassName("bloco-itens-list")[0].children;
 	for (let x =0; x < blockLista.length;x++) {
 		let inputLista = blockLista[x].querySelectorAll(".itens-atributes");
 		let usoDiario = inputLista[3].innerHTML.split(" ");
@@ -267,18 +277,19 @@ function calcularKWh(){
 		listaEletros.push(eletro);
 		somaTotal += eletro.gasto;
 	}
-
 	valueTotalKWH.value = somaTotal.toFixed(2);
 	valueTotalReais.value = "R$ " + ((somaTotal * valueTaxaKWH.value).toFixed(2).toString().replace(".",","));
+	
+	google.charts.load('current', {'packages':['corechart', 'table']});
+	google.charts.setOnLoadCallback(drawChart);
+	/*
 	if(somaTotal > 0) {
-		google.charts.load('current', {'packages':['corechart', 'table']});
-		google.charts.setOnLoadCallback(drawChart);
 
 	}else {
 		let mensagem = document.getElementById('piechart');
 		mensagem.style.visibility = "visible";
 		mensagem.innerHTML = "<p style='text-align:center;color:#000'>A potência total deve ser maior que 0kWh para mostrar o gráfico</p>";
-	}
+	}*/
 }
 
 
@@ -325,6 +336,15 @@ function drawChart() {
 	for (let v =0;v < listaEletros.length;v++){
 		data.addRow(listaEletros[v].getListaDados());
 	}
+	var cssClassNames = {
+		'headerRow': 'tabela-titulo',
+		'tableRow': '',
+		'oddTableRow': 'tabela-linha',
+		'selectedTableRow': '',
+		'hoverTableRow': '',
+		'headerCell': '',
+		'tableCell': 'tabela-celula',
+		'rowNumberCell': ''};
 
 	let pieOptions = {
 		title: 'Porcentual de Consumo dos Aparelhos',
@@ -345,6 +365,8 @@ function drawChart() {
 		showRowNumber: true, 
 		width: '100%', 
 		height: '100%',
+		'allowHtml': true,
+		'cssClassNames': cssClassNames,
 	}
 	let grafico1 = document.getElementById('piechart');
 	let grafico2 = document.getElementById('tablechart');
